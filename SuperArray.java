@@ -26,8 +26,9 @@ public class SuperArray {
   }
 
   public String set(int index, String element) {
+    String temp = data[index];
     data[index] = element;
-    return data[index];
+    return temp;
   }
 
   private void resize() {
