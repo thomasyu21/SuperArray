@@ -22,4 +22,9 @@ public class SuperArray {
     return data[index];
   }
 
+  public String set(int index, String element) {
+    data[index] = element;
+    return data[index];
+  }
+
 }
