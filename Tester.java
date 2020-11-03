@@ -8,6 +8,10 @@ public class Tester {
   System.out.println(a.add("test3"));
   System.out.println(a.set(0, "test4"));
   System.out.println(a.get(0));
+  for (int i = 0; i < 20; i++) {
+    a.add("test");
+  }
+  System.out.println(a.get(17));
 
   SuperArray words = new SuperArray();
   System.out.println(words.add("kani"));
