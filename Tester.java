@@ -26,6 +26,10 @@ public class Tester {
     System.out.println( words.get(i) );
   }
   System.out.println(words);
+  words.add(1, "yes");
+  System.out.println(words);
+  words.remove(0);
+  System.out.println(words);
 
   SuperArray b = new SuperArray();
   System.out.println(b.isEmpty());

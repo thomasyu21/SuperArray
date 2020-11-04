@@ -8,6 +8,11 @@ public class SuperArray {
     size = 0;
   }
 
+  public SuperArray(int initialCapacity) {
+    data = new String[initialCapacity];
+    size = 0;
+  }
+
   public int size() {
     return size;
   }
@@ -64,6 +69,23 @@ public class SuperArray {
       }
     }
     return false;
+  }
+
+  public void add (int index, String element) {
+    for (int i = size; i > index; i--) {
+      data[i] = data[i-1];
+    }
+    data[index] = element;
+    size++;
+  }
+
+  public String remove(int index) {
+    String temp = data[index];
+    for (int i = index; i < size; i++) {
+      data[i] = data[i+1];
+    }
+    size--;
+    return temp;
   }
 
 }
