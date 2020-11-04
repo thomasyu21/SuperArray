@@ -15,6 +15,9 @@ public class Tester {
   System.out.println(a.contains("test5"));
   System.out.println(a.contains("test4"));
   System.out.println(a.contains("test 4"));
+  System.out.println(a.indexOf("test"));
+  System.out.println(a.indexOf("test2"));
+  System.out.println(a.indexOf("test5"));
   a.clear();
   System.out.println(a.isEmpty());
 
@@ -30,8 +33,9 @@ public class Tester {
   System.out.println(words);
   words.remove(0);
   System.out.println(words);
+  System.out.println(words.toArray());
 
-  SuperArray b = new SuperArray();
+  SuperArray b = new SuperArray(0);
   System.out.println(b.isEmpty());
 
 

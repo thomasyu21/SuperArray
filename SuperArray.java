@@ -72,6 +72,9 @@ public class SuperArray {
   }
 
   public void add (int index, String element) {
+    if (size >= data.length) {
+      resize();
+    }
     for (int i = size; i > index; i--) {
       data[i] = data[i-1];
     }
@@ -85,6 +88,23 @@ public class SuperArray {
       data[i] = data[i+1];
     }
     size--;
+    return temp;
+  }
+
+  public int indexOf(String s) {
+    for (int i = 0; i < size; i++) {
+      if (s.equals(data[i])) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  public String[] toArray() {
+    String[] temp = new String[size];
+    for (int i = 0; i < size; i++) {
+      temp[i] = data[i];
+    }
     return temp;
   }
 
