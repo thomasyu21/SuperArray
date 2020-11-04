@@ -32,11 +32,38 @@ public class SuperArray {
   }
 
   private void resize() {
-    String[] temp = new String[size+10];
+    String[] temp = new String[(size*2)+1];
     for (int i = 0; i < size; i++) {
       temp[i] = data[i];
     }
     data = temp;
+  }
+
+  public boolean isEmpty() {
+    return size == 0;
+  }
+
+  public void clear() {
+    data = new String[10];
+    size = 0;
+  }
+
+  public String toString() {
+    String arr = "[" + data[0];
+    for (int i = 1; i < size; i++) {
+      arr+=", " + data[i];
+    }
+    arr+="]";
+    return arr;
+  }
+
+  public boolean contains(String s) {
+    for (int i = 0; i < size; i++) {
+      if (s.equals(data[i])) {
+        return true;
+      }
+    }
+    return false;
   }
 
 }

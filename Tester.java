@@ -12,6 +12,11 @@ public class Tester {
     a.add("test");
   }
   System.out.println(a.get(17));
+  System.out.println(a.contains("test5"));
+  System.out.println(a.contains("test4"));
+  System.out.println(a.contains("test 4"));
+  a.clear();
+  System.out.println(a.isEmpty());
 
   SuperArray words = new SuperArray();
   System.out.println(words.add("kani"));
@@ -20,6 +25,11 @@ public class Tester {
   for(int i = 0; i < words.size(); i++){
     System.out.println( words.get(i) );
   }
+  System.out.println(words);
+
+  SuperArray b = new SuperArray();
+  System.out.println(b.isEmpty());
+
 
   }
 
