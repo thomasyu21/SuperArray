@@ -26,6 +26,9 @@ public class Tester {
   System.out.println(a.lastIndexOf(null));
   a.clear();
   System.out.println(a.isEmpty());
+  System.out.println(a);
+  a.add("yes");
+  System.out.println(a);
 
   SuperArray words = new SuperArray();
   System.out.println(words.add("kani"));
