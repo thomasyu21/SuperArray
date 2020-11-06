@@ -79,7 +79,6 @@ public class Demo{
           c.add(a.get(i));
         }
       }
-      removeDuplicates(c);
       return c;
     }
 
