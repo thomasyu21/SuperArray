@@ -18,6 +18,11 @@ public class Tester {
   System.out.println(a.indexOf("test"));
   System.out.println(a.indexOf("test2"));
   System.out.println(a.indexOf("test5"));
+  System.out.println(a.size());
+  System.out.println(a);
+  System.out.println(a.get(23));
+  System.out.println(a.lastIndexOf("test"));
+  System.out.println(a.lastIndexOf(null));
   a.clear();
   System.out.println(a.isEmpty());
 
