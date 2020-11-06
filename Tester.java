@@ -22,6 +22,7 @@ public class Tester {
   System.out.println(a);
   System.out.println(a.get(23));
   System.out.println(a.lastIndexOf("test"));
+  System.out.println(a.lastIndexOf("test6"));
   System.out.println(a.lastIndexOf(null));
   a.clear();
   System.out.println(a.isEmpty());
@@ -43,7 +44,21 @@ public class Tester {
   SuperArray b = new SuperArray(0);
   System.out.println(b.isEmpty());
 
+  SuperArray c = new SuperArray();
+  c.add("test");  c.add("test1");  c.add("test2");  c.add("test3");
+  SuperArray d = new SuperArray();
+  d.add("test");  d.add("test1");  d.add("test2");
+  SuperArray e = new SuperArray();
+  e.add("test");  e.add("test1");  e.add("test2");  e.add("test3");  e.add("test4");
+  SuperArray f = new SuperArray();
+  f.add("test"); f.add("test1");  f.add("test2");   f.add("test3");
+  SuperArray g = new SuperArray();
+  g.add("test0"); g.add("test1"); g.add("test2"); g.add("test3");
 
+  System.out.println(c.equals(d));
+  System.out.println(c.equals(e));
+  System.out.println(c.equals(f));
+  System.out.println(c.equals(g));
   }
 
 }
