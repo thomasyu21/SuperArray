@@ -21,10 +21,16 @@ public class Demo{
     arr2.add("0");  arr2.add("4");  arr2.add("2");  arr2.add("2");  arr2.add("9");
 
     System.out.println(findOverlap(arr, arr2));
+
+    SuperArray arr3 = new SuperArray();
+    arr3.add("a"); arr3.add("b"); arr3.add("c"); arr3.add("d"); arr3.add("e"); arr3.add("f");
+    SuperArray letters = new SuperArray();
+    letters.add("0"); letters.add("1"); letters.add("2"); letters.add("3"); letters.add("3");
+    System.out.println(zip(arr3, letters));
   }
 
     public static void removeDuplicates(SuperArray s){
-      for (int i = 0; i < s.size(); i++) {
+      for (int i = 0; i < s.size()-1; i++) {
         if (i != s.indexOf(s.get(i))) {
           s.remove(i);
           i--;
@@ -47,6 +53,34 @@ public class Demo{
       }
       removeDuplicates(temp);
       return temp;
+    }
+
+    public static SuperArray zip(SuperArray a, SuperArray b){
+      SuperArray c = new SuperArray();
+      int size = 0;
+      boolean aSmaller = false;
+      int bigger = 0;
+      if (a.size() > b.size()){
+        size = b.size();
+        bigger = a.size();
+      }else{
+        size = a.size();
+        aSmaller = true;
+        bigger = b.size();
+      }
+      for (int i = 0; i < size; i++) {
+        c.add(a.get(i));
+        c.add(b.get(i));
+      }
+      for (int i = size; i < bigger; i++) {
+        if (aSmaller){
+          c.add(b.get(i));
+        }else{
+          c.add(a.get(i));
+        }
+      }
+      removeDuplicates(c);
+      return c;
     }
 
 }
