@@ -1,6 +1,13 @@
 public class Tester {
   public static void main(String[] args) {
   SuperArray a = new SuperArray();
+try {
+  SuperArray test = new SuperArray(-1);
+}catch (IllegalArgumentException e) {
+  e.printStackTrace();
+}
+  SuperArray test2 = new SuperArray(0);
+  SuperArray test3 = new SuperArray(1);
 
   System.out.println(a.size());
   System.out.println(a.add("test"));
@@ -11,6 +18,70 @@ public class Tester {
   for (int i = 0; i < 20; i++) {
     a.add("test");
   }
+  try {
+    System.out.println(a.get(-1));
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+  try {
+    System.out.println(a.get(23));
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+  try {
+    System.out.println(a.get(12));
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+
+  try {
+    System.out.println(a.set(-1, "yes"));
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+  try {
+    System.out.println(a.set(23, "yes"));
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+  try {
+    System.out.println(a.set(12, "yes"));
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+
+  try {
+  a.add(-1, "yes");
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+  try {
+    a.add(24, "yes");
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+  try {
+    a.add(12, "yes");
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+
+  try {
+    System.out.println(a.remove(-1));
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+  try {
+    System.out.println(a.remove(25));
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+  try {
+    System.out.println(a.remove(12));
+  }catch (IndexOutOfBoundsException e){
+    e.printStackTrace();
+  }
+
   System.out.println(a.get(17));
   System.out.println(a.contains("test5"));
   System.out.println(a.contains("test4"));
@@ -20,7 +91,6 @@ public class Tester {
   System.out.println(a.indexOf("test5"));
   System.out.println(a.size());
   System.out.println(a);
-  System.out.println(a.get(23));
   System.out.println(a.lastIndexOf("test"));
   System.out.println(a.lastIndexOf("test6"));
   System.out.println(a.lastIndexOf(null));

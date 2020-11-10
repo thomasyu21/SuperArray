@@ -31,14 +31,14 @@ public class SuperArray {
 
   public String get(int index) {
     if (index < 0 || index >= size) {
-      throw new IndexOutOfBoundsException("The index is out of range. The range is 0 to "+(size-1)+" inclusive.");
+      throw new IndexOutOfBoundsException("The index "+index+" is out of range. The range is 0 to "+(size-1)+" inclusive.");
     }
     return data[index];
   }
 
   public String set(int index, String element) {
     if (index < 0 || index >= size) {
-      throw new IndexOutOfBoundsException("The index is out of range. The range is 0 to "+(size-1)+" inclusive.");
+      throw new IndexOutOfBoundsException("The index "+index+" is out of range. The range is 0 to "+(size-1)+" inclusive.");
     }
     String temp = data[index];
     data[index] = element;
@@ -89,7 +89,7 @@ public class SuperArray {
 
   public void add (int index, String element) {
     if (index < 0 || index > size){
-      IndexOutOfBoundsException("The index is out of range. The range is 0 to "+size+" inclusive.");
+      throw new IndexOutOfBoundsException("The index "+index+" is out of range. The range is 0 to "+size+" inclusive.");
     }
     if (size >= data.length) {
       resize();
@@ -103,7 +103,7 @@ public class SuperArray {
 
   public String remove(int index) {
     if (index < 0 || index >= size){
-      throw new IndexOutOfBoundsException("The index is out of range. The range is 0 to "+(size-1)+" inclusive.");
+      throw new IndexOutOfBoundsException("The index "+index+" is out of range. The range is 0 to "+(size-1)+" inclusive.");
     }
     String temp = data[index];
     for (int i = index; i < size; i++) {
