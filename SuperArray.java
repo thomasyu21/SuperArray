@@ -106,7 +106,7 @@ public class SuperArray {
       throw new IndexOutOfBoundsException("The index "+index+" is out of range. The range is 0 to "+(size-1)+" inclusive.");
     }
     String temp = data[index];
-    for (int i = index; i < size; i++) {
+    for (int i = index; i < size-1; i++) {
       data[i] = data[i+1];
     }
     size--;
